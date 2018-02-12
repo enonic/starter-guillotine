@@ -1,2 +1,2 @@
 # starter-headless
-Starter kit for bulding headless CMS backends with Enonic XP
+Starter kit for building your headless CMS back-end with Enonic XP
