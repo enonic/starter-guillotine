@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type>
+  <display-name>List</display-name>
+  <super-type>base:structured</super-type>
+  <form>
+    <input type="DateTime" name="dateofbirth">
+      <label>Birth Date</label>
+       <occurrences minimum="0" maximum="1"/>
+    </input>
+  </form>
+</content-type>

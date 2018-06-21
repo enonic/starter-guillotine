@@ -9,14 +9,14 @@ Complete documentation is available on https://developer.enonic.com/guides/headl
 To quickly build and deploy the starter as an app (wihtout customizing it for your own needs):
 
 . Clone this Github project: `git clone ...`
-. Build the project: `./gradlew build`
+. Build the project from project directory: `./gradlew build`
 . Deploy the output file in build/lib/ to your XP instance
 
 ## Compatibility
 
 | Version       | XP version |
 | ------------- | ---------- |
-| 1.0.0	        | 6.14.0 - |
+| 1.0.0	        | 6.14.0 -   |
 
 ## Changelog
 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x-data>
+  <display-name>Social Media</display-name>
+  <allowContentType>${app}:actor</allowContentType>
+  <allowContentType>${app}:movie</allowContentType>
+  <items>
+    <input type="TextLine" name="website">
+      <label>Website</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="twitter">
+      <label>Twitter</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="facebook">
+      <label>Facebook</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="TextLine" name="instagram">
+      <label>Instagram</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+  </items>
+</x-data>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content-type
+    xmlns="urn:enonic:xp:model:1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:enonic:xp:model:1.0 https://raw.githubusercontent.com/enonic/xp/master/modules/core/core-api/src/main/resources/META-INF/xsd/model.xsd">
+  <!-- XSD reference above provides auto-completion in most editors -->
+  <display-name>Movie</display-name>
+  <super-type>base:structured</super-type>
+  <form>
+    <input type="TextLine" name="subtitle">
+      <label>Subtitle</label>
+       <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="imageSelector" name="photos">
+      <label>Photos</label>
+      <occurrences minimum="0" maximum="0"/>
+    </input>
+    <input type="customSelector" name="trailer">
+      <label>Trailer</label>
+      <occurrences minimum="0" maximum="1"/>
+      <config>
+        <service>youtube-selector</service>
+      </config>
+    </input>
+    <input type="TextArea" name="abstract">
+      <label>Abstract</label>
+       <occurrences minimum="1" maximum="1"/>
+    </input>
+    <input type="date" name="release">
+      <label>Release Date</label>
+       <occurrences minimum="0" maximum="1"/>
+    </input>
+    <item-set name="cast">
+      <label>Cast</label>
+      <items>
+        <input type="contentSelector" name="actor">
+          <label>Trailer</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+        <input type="textLine" name="role">
+          <label>Role</label>
+          <occurrences minimum="1" maximum="1"/>
+        </input>
+      </items>
+    </item-set>
+  </form>
+</content-type>

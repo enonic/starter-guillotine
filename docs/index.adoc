@@ -1,0 +1,150 @@
+= Get started with Headless CMS
+
+*A step-by-step tutorial for building your first headless content back-end with Enonic XP*
+
+== Introduction
+
+During this tutorial you will learn about:
+
+* How to initialize a new project from the Headless Starter
+* The sample project "Headless Movie Database"
+* How to create your own content types from scratch
+* How to access and use the Headless API - based on https://developer.enonic.com/docs/guillotine[Project Guillotine]
+* useful tips and tricks for Headless projects
+
+== Setting up your project
+
+****
+[CAUTION]
+====
+In order to complete this tutorial, you first need to install the Enonic Developer environment:
+https://developer.enonic.com/enonic-101/install-developer-environment
+====
+****
+
+
+We will initialize our project from a template:
+
+. *Go to the Headless Starter kit* on https://market.enonic.com/vendors/enonic/headless-starter[Enonic Market]
+. *Click the image:images/clone.png[Clone, 80] button.*
+. *Follow the instructions* run the init-project command and specify the name of your app, for instance `com.company.headless.app`
+. *Verify project files*. The command will now have generated a project file structure on your local machine. The most important files and folders for this tutorial are:
+
+[source,files]
+----
+src/
+ main/
+  resources/
+   site/ <1>
+    content-types/ <2>
+    x-data/ <3>
+----
+
+<1> This is where CMS-specific functionality is placed
+<2> Content Types are placed in this directory
+<3> X-data enables editors to add additional fields to content across different content types
+
+NOTE: The video below demonstrates project initialization in detail
+
+video::Fpudgai1Fsk[youtube,class="youtube"]
+
+== Building and Deploying
+
+Now that we have a project, its time to build and deploy the app to the development environment.
+
+. *Change directory* to your newly created project folder
+. *Run the build script*. The app file will be placed in the build/libs/ folder.
+
+  ./gradlew build
+
+. *Deploy the app*.
+
+  ./gradlew deploy
+
+. *Verify* that the app is installed and started from the Applications tool.
+
+image::images/app.png["You should see something like this"]
+
+
+== Headless Movie Database
+
+Your app also includes samples and an accompanying dataset we simply call the "Headless Movie Database".
+When the app was deployed, it automatically created a site with the HMDB dataset in Content Studio.
+
+To see the dataset, simply login to your Admin Console and access Content Studio:
+
+image::images/hmdb.png["Headless Movie Database"]
+
+NOTE: To remove everything related to HMDB from your project below: <<Removing HMDB>>
+
+The HMDB contains a total of five content types, which we will use throughout this tutorial: *Actor*, *Genre*, *Playlist* and *Movie*.
+Each content type defines a form for editors to easily add and manage content. Let's have a closer look at the content type "Movie".
+
+When creating or editing a movie, this is what the editor will see in content studio
+
+image::images/movie.png["An actor"]
+
+This form is automatically generated based on definition from the file '/src/main/resources/site/content-type/actor/actor.xml' :
+
+[source,XML]
+----
+include::../src/main/resources/site/content-types/actor/actor.xml[]
+----
+
+
+== Accessing HMDB through the API
+
+The headless starter includes the Guillotine Library, which automatically generates a GraphQL API based on our content types.
+
+For a standard development environment, you should now be able to access the API on this link:
+http://localhost:8080/portal/master/hmdb/_/service/com.company.headless.app/guillotine
+
+NOTE: If the link does not work, you might have used a custom name when setting up your project. Just make sure the link contains the correct app name.
+
+TODO, error
+
+TODO, use GraphiQL
+
+TODO sample queries
+
+
+== Adding a custom content type
+
+To make things a bit more interesting, lets add a new content type to the project.
+
+. *Create a new file* called `src/main/resources/site/content-types/review/review.xml` to your project.
++
+[source,javascript]
+----
+include::../src/main/resources/main.js[]
+----
++
+. *Build and deploy* your application once more. NB! The deploy command will both build and deploy the app
+
+  ./gradlew deploy
+
+. *Write A review*. You should now be able to create a "Review" within Content Studio and the HMDB site.:
+
+image::images/hello.png["Output from main.js controller"]
+
+If you want to learn more about schemas and building content types in Enonic XP, check out the http://docs.enonic.com/en/stable/developer/schema/index.html[full documentation]
+
+== Tips and tricks
+
+TODO:
+
+* permissions
+* customSelectors
+* errorPage
+* preview
+
+
+== Removing HMDB
+
+To completely remove HMDB from your new project, simply remove the following files and folders after initializing:
+
+* src/main/import
+* src/main/resources/site/content-types/*
+* src/main/resources/site/x-data/*
+* src/main/resources/x-data/*
+* src/main/resources/main.js
