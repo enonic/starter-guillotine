@@ -3,9 +3,16 @@
   <display-name>List</display-name>
   <super-type>base:structured</super-type>
   <form>
-    <input type="DateTime" name="dateofbirth">
-      <label>Birth Date</label>
+    <input type="TextArea" name="description">
+      <label>Description</label>
        <occurrences minimum="0" maximum="1"/>
+    </input>
+    <input type="contentSelector" name="list">
+      <label>Movie List</label>
+      <occurrences minimum="3" maximum="10"/>
+      <config>
+        <allowContentType>${app}:movie</allowContentType>
+      </config>
     </input>
   </form>
 </content-type>
