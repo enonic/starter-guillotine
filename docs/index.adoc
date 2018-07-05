@@ -1,4 +1,6 @@
 = Get started with Headless CMS
+:toc: right
+:experimental:
 
 *A step-by-step tutorial for using Enonic XP as a headless CMS*
 
@@ -10,9 +12,7 @@ During this tutorial you will learn:
 * About the sample project included in the starter: "Headless Movie Database"
 * How to create your own content types from scratch
 * How to access and use the Headless API
-* Some useful tips and tricks for Headless projects
-
-== Setting up your project
+* How to deploy to production
 
 ****
 [CAUTION]
@@ -21,47 +21,68 @@ In order to complete this tutorial, you first need to install the https://develo
 ====
 ****
 
+
+== Initializing a new project
+
+
+NOTE: Optionally watch this https://www.youtube.com/watch?v=Fpudgai1Fsk[video about initializing projects].
+
+
 Let's start by initializing a project:
 
-. *Visit the Headless Starter kit* on https://market.enonic.com/vendors/enonic/headless-starter[Enonic Market]
-. *Click the* btn:clone
-. *Follow the instructions* by running the init-project command and specify the name of your app. We will `com.enonic.starter.headless` throughout the tutorial.
-. *Verify the project files*. The command will now have generated a project file structure on your local machine. The most important files and folders for this tutorial are:
+[cols="1%s,99%a"]
+[frame="none"]
+[grid="none"]
+|============================
+|1| Go to https://market.enonic.com/vendors/enonic/headless-starter[Headless Starter kit on Enonic Market].
+|2| Click btn:[Clone]
+|3| Follow the instructions to execute init-project command and specify the name of your app. We will `com.enonic.starter.headless` throughout the tutorial.
+|4| Verify the project files. The command will now have generated a project file structure on your local machine. The most important files and folders for this tutorial are listed below
 
 [source,files]
 ----
 src/
  main/
   resources/
-   site/ <1>
-    content-types/ <2>
-    x-data/ <3>
+   import <1>
+   site/ <2>
+    content-types/ <3>
+    x-data/ <4>
+sample/ <5>
 ----
 
-<1> This is where CMS-specific functionality is placed
-<2> Content Types are placed in this directory
-<3> X-data enables editors to add additional fields to content across different content types
-
-NOTE: Optionally watch this https://www.youtube.com/watch?v=Fpudgai1Fsk[video about initializing projects].
+<1> Sample content for Headless Movie Database
+<2> This is where CMS-specific functionality is placed
+<3> Content Types are placed in this directory
+<4> X-data enables editors to add additional fields to content across different content types
+<5> Sample files that will be used in the tutorial
+|============================
 
 == Building and Deploying
 
 Now that we have a project, its time to build and deploy the app to the development environment.
 
-. *Change directory* to your newly created project folder
-. *Run the build script*. The app file will be placed in the build/libs/ folder.
+
+[cols="1%s,99%a"]
+[frame="none"]
+[grid="none"]
+|============================
+|1| *Change directory* to your newly created project folder
+|2| *Run the build script*. The app file will be placed in the build/libs/ folder.
 
   ./gradlew build
 
-. *Deploy the app*.
+|3| *Deploy the app*.
 
   ./gradlew deploy
 
-. *Verify* that the app is installed and started from the Applications tool.
+|4| *Verify* that the app is installed and started from the Applications tool.
 
-image::images/app.png["You should now see something like this"]
+image::images/app.png["You should now see something like this", width="1096px"]
 
 NOTE: For the deploy command to work, you must have configured system variable XP_HOME. Alternatively, simply upload the build file located in the build/libs/ directory of your project.
+|============================
+
 
 == Headless Movie Database
 
@@ -106,58 +127,71 @@ For this X-data specifically, we can see it is restricted to use only for the "P
 include::../src/main/resources/site/x-data/SoMe/SoMe.xml[]
 ----
 
-Learn more about using X-data TODO
-
+Read more about X-data from the https://xp.readthedocs.io/en/stable/developer/schema/x-data.html[documentation].
 
 
 == Adding a custom content type
 
 To make things even more interesting, lets extend the project with a new content type for reviews.
 
-. *Move the file* `sample/review/review.xml` to `src/main/resources/site/content-types/review/review.xml` in your project.
-. *Optionally add icon* by moving the file `sample/review/review.svg` to `src/main/resources/site/content-types/review/review.svg` to get a nice icon in Content Studio.
-. *Build and deploy* your application once more. NB! The deploy command will both build and deploy the app
+[cols="1%s,99%a"]
+[frame="none"]
+[grid="none"]
+|============================
+|1| *Move the file* `sample/review/review.xml` to `src/main/resources/site/content-types/review/review.xml` in your project.
+|2| *Optionally add icon* by moving the file `sample/review/review.svg` to `src/main/resources/site/content-types/review/review.svg` to get a nice icon in Content Studio.
+|3| *Build and deploy* your application once more. NB! The deploy command will both build and deploy the app
 
   ./gradlew deploy
 
-. *Write A review*. You should now be able to create a "Review" within Content Studio and the *HMDB* site.:
-+
-image::images/review.png["Sample Review"]
-+
+|4| *Write A review*. You should now be able to create a "Review" within Content Studio and the *HMDB* site.
 
-If you want to learn more about schemas and building content types in Enonic XP, check out the http://docs.enonic.com/en/stable/developer/schema/index.html[full documentation]
+image::images/review.png["Sample Review", width="687px"]
+|============================
+
+
+Curious to learn more about schemas and content types? Check out the http://docs.enonic.com/en/stable/developer/schema/index.html[full documentation]
 
 == Accessing HMDB through the API
 
 The headless starter uses the the https://market.enonic.com/vendor/enonic/guillotine[Guillotine project],
 to automatically generate a powerful GraphQL API based on available content types in the site.
 
-If you are not familiar with GraphQL, we recommend checking out the https://graphql.org[GraphQL documentation after] completing this tutorial:
-
 The Easiest way to access the API is by installing https://market.enonic.com/vendors/enonic/graphiql[GraphiQL] from Enonic Market.
 
-. *Log into the Admin Console*
-. *Click "Applications"* in the launcher menu
-. *Click btn:install*
-. *Search for and install GraphiQL*
-. *Launch GraphiQL* from the launcher menu
+[cols="1%s,99%a"]
+[frame="none"]
+[grid="none"]
+|============================
+|1| *Log into the Admin Console*
+|2| *Click "Applications"* in the launcher menu
+|3| *Click btn:install* find and install the app "GraphiQL"
+|4| *Launch GraphiQL* from the launcher menu
 
-Once loaded, GraphiQL, you need to paste the service url into the url field.
+Once GraphiQL has loaded you need to add the API Url:
 
 ****
 [NOTE]
 ====
-The default url is http://localhost:8080/portal/draft/hmdb/_/service/com.enonic.starter.headless/graphql
+You can use the following url http://localhost:8080/portal/draft/hmdb/_/service/com.enonic.starter.headless/graphql
 
-Make sure to replace "<name of your app>" in the url.
+If you used a different name for your app, make sure to replace `com.enonic.starter.headless` with yours.
 ====
 ****
+|============================
 
-After GraphiQL is correctly deployed, you will automatically be able to access the documentation of the API from the right hand side.
 
-Below we will give a few examples of how to use the API
+NOTE: *New to GraphQL?* If you are not familiar with GraphQL, we recommend checking out the https://graphql.org[GraphQL documentation after completing this tutorial.
 
-=== Fetching persons
+When GraphiQL has successfully connected to the service, you will automatically be able to access the API documentation from the right hand side.
+Queries can now be typed into the left hand panel and executed.
+The result will be listed in the center panel.
+
+Below are a few examples of queries we can use to access the *HMDB*.
+
+NOTE: When accessing your customized content types and content, the API is essentially the same, but you must adapt the queries to match with your model.
+
+=== Fetching Persons
 
 The query below will fetch the Display Name of five items from the "persons/" folder:
 [source,GraphQL]
@@ -331,11 +365,6 @@ Sample response from the API:
 
 When deployed to production, the image url will be aligned with the production domain.
 
-=== GraphQL Clients
-
-The headless API can be accessed from virtually any programming language or device.
-We recommend checking out the Apollo project!
-
 == Creating your own site from scratch
 
 Content Studio lets you create multiple "collections" of content, we call these collections "sites".
@@ -343,14 +372,19 @@ You may create multiple sites from a single application, and also extend a site 
 
 To create your own site:
 
-. Select the location where you want to place the site
-. Click btn:new and choose "Site" from the list of content types.
-. Add your application (and even others) to the site
-. You may now start creating content within the new site
+[cols="1%s,99%a"]
+[frame="none"]
+[grid="none"]
+|============================
+|1| *Click btn:[New]* at a desired location in the structure, and choose the content type "Site".
+|2| *Add your application to the site*
 
-image::images/site.png["Add the application to your site"]
+image::images/site.png["Add the application to your site", width="544"]
 
-TIP: You are free to group your content in folders and tree-structures as desired within a site, just like we do in the HMDB.
+|3| You may now start creating content within the new site
+|============================
+
+TIP: You are free to group your content in folders and tree-structures, as well as setting permissions as you desire within the site, just like the *HMDB*.
 
 == Deploying to Production
 
@@ -360,17 +394,17 @@ or request an instance from the https://enonic.com[Enonic Cloud].
 
 NOTE: Enonic XP is both open source, and can run on any infrastructure and in any cloud, in contrast to other popular Headless CMS offerings.
 
-Read more about https://docs.enonic.com/[production deployment of Enonic XP].
+Read more about https://docs.enonic.com/[production deployment of Enonic XP] in the documentation.
 
+== Removing HMDB from your project
 
-== Removing HMDB
+Clean up your project by removing HMDB content, the schemas, _this_ documentation and the samples files from your cloned project.
 
-Follow these steps to remove HMDB, this documentation and samples from your cloned project.
 Remove the following files and folders:
 
 * src/main/resources/java* (Java code used to import the HMDB data)
 * src/main/resources/import* (the HMDB dataset)
 * src/main/resources/site/content-types/* (HMDB content types)
 * src/main/resources/site/x-data/* (X-data form)
-* docs/* (This documentation - can be build using `gradle asciidoctor`)
+* docs/* (Contains the documentation you are reading - can be build using `gradle asciidoctor`)
 * sample* (Sample config files)
