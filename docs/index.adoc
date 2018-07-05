@@ -1,12 +1,12 @@
 = Get started with Headless CMS
 
-*A step-by-step tutorial for building your first headless content back-end with Enonic XP*
+*A step-by-step tutorial for using Enonic XP as a headless CMS*
 
 == Introduction
 
 During this tutorial you will learn:
 
-* How to initialize a new project based on the Headless Starter
+* How to initialize a new project based on the "Headless Starter Kit"
 * About the sample project included in the starter: "Headless Movie Database"
 * How to create your own content types from scratch
 * How to access and use the Headless API
@@ -23,7 +23,7 @@ In order to complete this tutorial, you first need to install the https://develo
 
 Let's start by initializing a project:
 
-. *Go to the Headless Starter kit* on https://market.enonic.com/vendors/enonic/headless-starter[Enonic Market]
+. *Visit the Headless Starter kit* on https://market.enonic.com/vendors/enonic/headless-starter[Enonic Market]
 . *Click the* btn:clone
 . *Follow the instructions* by running the init-project command and specify the name of your app. We will `com.enonic.starter.headless` throughout the tutorial.
 . *Verify the project files*. The command will now have generated a project file structure on your local machine. The most important files and folders for this tutorial are:
@@ -136,18 +136,18 @@ If you are not familiar with GraphQL, we recommend checking out the https://grap
 
 The Easiest way to access the API is by installing https://market.enonic.com/vendors/enonic/graphiql[GraphiQL] from Enonic Market.
 
-. From the Admin Console, select "Applications" from the launcher menu
-. Click btn:install
-. Search for and install GraphiQL
-. You may now open GraphiQL from the launcher menu
+. *Log into the Admin Console*
+. *Click "Applications"* in the launcher menu
+. *Click btn:install*
+. *Search for and install GraphiQL*
+. *Launch GraphiQL* from the launcher menu
 
-Once loaded, GraphiQL will attempt to find the endpoint for your API and load it.
+Once loaded, GraphiQL, you need to paste the service url into the url field.
 
 ****
 [NOTE]
 ====
-If GraphiQL does not find your API, try pasting in the following url:
-http://localhost:8080/portal/draft/hmdb/_/service/<name of your app>/graphql
+The default url is http://localhost:8080/portal/draft/hmdb/_/service/com.enonic.starter.headless/graphql
 
 Make sure to replace "<name of your app>" in the url.
 ====
@@ -338,8 +338,8 @@ We recommend checking out the Apollo project!
 
 == Creating your own site from scratch
 
-Content Studio lets you create "collections" of content based on your app, we call these sites.
-You may even create multiple sites from a single application.
+Content Studio lets you create multiple "collections" of content, we call these collections "sites".
+You may create multiple sites from a single application, and also extend a site with other apps.
 
 To create your own site:
 
@@ -348,9 +348,9 @@ To create your own site:
 . Add your application (and even others) to the site
 . You may now start creating content within the new site
 
-image::images/hello.png["Output from main.js controller"]
+image::images/site.png["Add the application to your site"]
 
-TIP: You are free to group your content in folders and tree-structures as desired within a site, like we do in the HMDB.
+TIP: You are free to group your content in folders and tree-structures as desired within a site, just like we do in the HMDB.
 
 == Deploying to Production
 
@@ -365,9 +365,12 @@ Read more about https://docs.enonic.com/[production deployment of Enonic XP].
 
 == Removing HMDB
 
-To completely remove HMDB from your new project, simply remove the following files and folders after initializing:
+Follow these steps to remove HMDB, this documentation and samples from your cloned project.
+Remove the following files and folders:
 
-* src/main/resources/java* (used to import the HMDB data)
+* src/main/resources/java* (Java code used to import the HMDB data)
 * src/main/resources/import* (the HMDB dataset)
-* src/main/resources/site/content-types/* (Misc content types)
+* src/main/resources/site/content-types/* (HMDB content types)
 * src/main/resources/site/x-data/* (X-data form)
+* docs/* (This documentation - can be build using `gradle asciidoctor`)
+* sample* (Sample config files)
