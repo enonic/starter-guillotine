@@ -5,8 +5,8 @@ plugins {
 
 app {
     name = "${appName}"
-    displayName = "${displayName}"
-    vendorName = "${vendorName}"
+    displayName = "${label}"
+    vendorName = "${vendor}"
     vendorUrl = "${vendorUrl}"
     systemVersion = "${xpVersion}"
 }

@@ -22,6 +22,6 @@ Version 1.0.0 of this starter will be released when XP 6.15.0 is live
 
 ## Changelog
 
-### 1.0.0
+### 0.9.0
 
 * Initial release
