@@ -1,6 +1,6 @@
 plugins {
     id 'com.enonic.xp.app' version '1.0.17'
-    id 'org.asciidoctor.convert' version '1.5.3'
+    id 'org.asciidoctor.convert' version '1.5.7'
 }
 
 app {
