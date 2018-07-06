@@ -2,7 +2,7 @@
 :toc: right
 :experimental:
 
-*A step-by-step tutorial for using Enonic XP as a headless CMS*
+*A step-by-step tutorial for using Enonic XP as a powerful back-end to create and serve your content*
 
 == Introduction
 
@@ -165,7 +165,7 @@ The Easiest way to access the API is by installing https://market.enonic.com/ven
 |============================
 |1| *Log into the Admin Console*
 |2| *Click "Applications"* in the launcher menu
-|3| *Click btn:install* find and install the app "GraphiQL"
+|3| *Click btn:[Install]* find and install the app "GraphiQL"
 |4| *Launch GraphiQL* from the launcher menu
 
 Once GraphiQL has loaded you need to add the API Url:
