@@ -396,7 +396,7 @@ TIP: You are completely free to group your content in folders and tree-structure
 == Deploying to Production
 
 To deploy your application to production, your first need a server running Enonic XP.
-If you don't already have a server, we recommend trying out https://developer.enonic.com/guides/deploying-to-google-cloud[Google Cloud],
+If you don't already have a server, we recommend trying out https://developer.enonic.com/guides/xp-on-google-cloud-platform[Google Cloud],
 or request an instance from the https://enonic.com[Enonic Cloud].
 
 NOTE: Enonic XP is both open source, and can run on any infrastructure and in any cloud, in contrast to other popular Headless CMS offerings.
