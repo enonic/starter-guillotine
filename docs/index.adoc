@@ -166,6 +166,10 @@ image::images/review.png["Sample Review", width="687px"]
 
 TIP: There is more to learn from the http://docs.enonic.com/en/stable/developer/schema/index.html[Content Types documentation]
 
+== CORS headers
+
+If the client is hosted on a different domain than the GraphQL service the browser will not allow the client to talk to the backend unless proper CORS headers are set. There is an outcommented example in the GraphQL service source code (src/main/resources/services/graphql/graphql.js).
+
 == Accessing HMDB through the API
 
 The headless starter uses the the https://market.enonic.com/vendor/enonic/guillotine[Project Guillotine],
