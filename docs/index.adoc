@@ -172,7 +172,7 @@ If the client is hosted on a different domain than the GraphQL service the brows
 
 == Accessing HMDB through the API
 
-The headless starter uses the the https://market.enonic.com/vendor/enonic/guillotine[Project Guillotine],
+The headless starter uses the the https://market.enonic.com/vendors/enonic/guillotine-headless-lib[Project Guillotine],
 to automatically generate a powerful GraphQL API based on available content within a site.
 
 The easiest way to test the API is by installing https://market.enonic.com/vendors/enonic/graphiql[GraphiQL] from Enonic Market.
