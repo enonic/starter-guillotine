@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<content-type>
+<content-type xmlns="urn:enonic:xp:model:1.0">
   <display-name>List</display-name>
   <super-type>base:structured</super-type>
   <form>
@@ -11,7 +11,7 @@
       <label>Movie List</label>
       <occurrences minimum="3" maximum="10"/>
       <config>
-        <allowContentType>${app}:movie</allowContentType>
+        <allowContentType>movie</allowContentType>
       </config>
     </input>
   </form>

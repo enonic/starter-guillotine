@@ -15,7 +15,7 @@
       <label>Director</label>
       <occurrences minimum="0" maximum="1"/>
       <config>
-        <allowContentType>${app}:person</allowContentType>
+        <allowContentType>person</allowContentType>
       </config>
     </input>
     <input type="ImageSelector" name="photos">
@@ -46,7 +46,7 @@
           <label>Actor</label>
           <occurrences minimum="1" maximum="1"/>
           <config>
-            <allowContentType>${app}:person</allowContentType>
+            <allowContentType>person</allowContentType>
           </config>
         </input>
         <input type="TextLine" name="character">
