@@ -1,6 +1,6 @@
 # Headless CMS Starter for Enonic XP
 
-This starter kit provides a project foundation with examples for building your own Headless CMS back-end using Enonic XP
+This starter kit provides a project foundation for building your own Headless CMS back-end using Enonic XP
 
 Complete documentation is available on https://developer.enonic.com/guides/headless-starter
 
@@ -14,13 +14,17 @@ To quickly build and deploy the starter as an app (without customizing it for yo
 
 ## Compatibility
 
-Version 1.0.0 of this starter will be released when XP 6.15.0 is live
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 1.0.0	        | 7.0.0-SNAPSHOT |
 | 0.9.0	        | 6.15.0-SNAPSHOT |
 
 ## Changelog
+
+### 1.0.0
+
+* Updated for XP 7
 
 ### 0.9.0
 

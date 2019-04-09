@@ -2,4 +2,9 @@
 <site xmlns="urn:enonic:xp:model:1.0">
   <x-data name="SoMe" allowContentTypes="person|movie"/>
   <form/>
+  <mappings>
+    <mapping controller="/controllers/graphql.js" order="50">
+      <pattern>/api</pattern>
+    </mapping>
+  </mappings>
 </site>

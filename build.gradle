@@ -1,6 +1,5 @@
 plugins {
     id 'com.enonic.xp.app' version '2.0.0'
-    id 'org.asciidoctor.convert' version '1.5.7'
 }
 
 apply plugin: "com.enonic.xp.app"
@@ -22,9 +21,4 @@ repositories {
     mavenLocal()
     jcenter()
     xp.enonicRepo()
-}
-
-asciidoctor {
-  sourceDir = file('docs')
-  outputDir = file('build/docs')
 }
