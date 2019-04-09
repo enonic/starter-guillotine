@@ -1,19 +1,21 @@
 plugins {
-    id 'com.enonic.xp.app' version '1.0.17'
+    id 'com.enonic.xp.app' version '2.0.0'
     id 'org.asciidoctor.convert' version '1.5.7'
 }
 
+apply plugin: "com.enonic.xp.app"
+
 app {
     name = "${appName}"
-    displayName = "${label}"
-    vendorName = "${vendor}"
+    displayName = "${appDisplayName}"
+    vendorName = "${vendorName}"
     vendorUrl = "${vendorUrl}"
     systemVersion = "${xpVersion}"
 }
 
 dependencies {
-    compile "com.enonic.xp:portal-api:${xpVersion}"
-    include "com.enonic.lib:lib-guillotine:1.0.1"
+  compile "com.enonic.xp:portal-api:${xpVersion}"
+  include "com.enonic.lib:lib-guillotine:2.0.0-B2"
 }
 
 repositories {
@@ -25,8 +27,4 @@ repositories {
 asciidoctor {
   sourceDir = file('docs')
   outputDir = file('build/docs')
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '4.10.2'
 }
