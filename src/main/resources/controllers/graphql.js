@@ -17,7 +17,7 @@ var execute = graphQlLib.execute;
 var CORS_HEADERS = {
 	'Access-Control-Allow-Headers': 'Content-Type',
 	'Access-Control-Allow-Methods': 'POST, OPTIONS',
-	'Access-Control-Allow-Origin': *
+	'Access-Control-Allow-Origin': '*'
 };
 
 var SCHEMA = guillotineLib.createSchema();
