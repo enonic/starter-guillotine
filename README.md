@@ -2,7 +2,7 @@
 
 This starter kit provides a project foundation for building your own Headless CMS back-end using Enonic XP
 
-Complete documentation is available on https://developer.enonic.com/guides/headless-starter
+Complete documentation is available on https://developer.enonic.com/templates/headless-cms
 
 ## Quick test
 
