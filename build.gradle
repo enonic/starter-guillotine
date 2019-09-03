@@ -14,7 +14,7 @@ app {
 
 dependencies {
   compile "com.enonic.xp:portal-api:${xpVersion}"
-  include "com.enonic.lib:lib-guillotine:2.0.0-B2"
+  include "com.enonic.lib:lib-guillotine:2.0.0"
 }
 
 repositories {

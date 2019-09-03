@@ -17,7 +17,7 @@ To quickly build and deploy the starter as an app (without customizing it for yo
 
 | Version       | XP version |
 | ------------- | ---------- |
-| 1.0.0	        | 7.0.0-SNAPSHOT |
+| 1.0.0	        | 7.0.0 |
 | 0.9.0	        | 6.15.0-SNAPSHOT |
 
 ## Changelog
