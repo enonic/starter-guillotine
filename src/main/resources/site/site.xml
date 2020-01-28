@@ -6,5 +6,8 @@
     <mapping controller="/controllers/graphql.js" order="50">
       <pattern>/api</pattern>
     </mapping>
+    <mapping controller="/controllers/page.js" order="50">
+      <match>type:'portal:site'</match>    
+    </mapping>
   </mappings>
 </site>
