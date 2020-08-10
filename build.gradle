@@ -15,7 +15,7 @@ app {
 dependencies {
     compile "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-websocket:${xpVersion}"
-    include "com.enonic.lib:lib-guillotine:4.1.1"
+    include "com.enonic.lib:lib-guillotine:4.2.0"
     include "com.enonic.lib:lib-graphql-playground:0.0.1"
 }
 
