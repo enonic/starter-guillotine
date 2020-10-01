@@ -161,7 +161,7 @@ exports.post = function (req) {
     return {
         contentType: 'application/json',
 		headers: CORS_HEADERS,
-        body: graphQlLib.execute(SCHEMA, body.query, body.variables)
+        body: JSON.stringify(graphQlLib.execute(SCHEMA, body.query, body.variables))
     };
 };
 
