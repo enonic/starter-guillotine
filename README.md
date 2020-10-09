@@ -2,11 +2,11 @@
 
 This starter kit provides a project foundation for building your own Headless CMS back-end using Enonic XP
 
-Complete documentation is available on https://developer.enonic.com/templates/headless-cms
+Documentation is available on https://developer.enonic.com/guildes/headless-cms-intro
 
 ## Quick test
 
-To quickly build and deploy the starter as an app (without customizing it for your own needs):
+To build and deploy the starter as an app (without customizing it for your own needs):
 
 . Clone this Github project: `git clone ...`
 . Build the project from project directory: `./gradlew build`
@@ -17,10 +17,15 @@ To quickly build and deploy the starter as an app (without customizing it for yo
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 3.0.0	        | 7.3.1 |
 | 1.0.0	        | 7.0.0 |
 | 0.9.0	        | 6.15.0-SNAPSHOT |
 
 ## Changelog
+
+### 3.0.0
+
+* Cleaned to work in combination with HMDB
 
 ### 1.0.0
 
