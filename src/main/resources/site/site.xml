@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site xmlns="urn:enonic:xp:model:1.0">
-  <x-data name="SoMe" allowContentTypes="person|movie"/>
   <form/>
   <mappings>
     <mapping controller="/controllers/graphql.js" order="50">
       <pattern>/api</pattern>
     </mapping>
-    <mapping controller="/controllers/page.js" order="50">
+    <!--mapping controller="/controllers/page.js" order="50">
       <match>type:'portal:site'</match>    
-    </mapping>
+    </mapping-->
   </mappings>
 </site>
