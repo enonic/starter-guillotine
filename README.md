@@ -17,12 +17,21 @@ To build and deploy the starter as an app (without customizing it for your own n
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 4.1.0	        | 7.5.0 |
 | 4.0.0	        | 7.5.0 |
 | 3.0.0	        | 7.3.1 |
 | 1.0.0	        | 7.0.0 |
 | 0.9.0	        | 6.15.0-SNAPSHOT |
 
 ## Changelog
+
+### 4.1.0
+
+* Upgraded to XP 7.6.0
+
+### 4.0.0
+
+* Upgraded to XP 7.5.0
 
 ### 3.0.0
 
