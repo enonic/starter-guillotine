@@ -15,12 +15,12 @@ app {
 dependencies {
     compile "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-websocket:${xpVersion}"
-    include "com.enonic.lib:lib-guillotine:4.2.3"
+    include "com.enonic.lib:lib-guillotine:5.0.0"
     include "com.enonic.lib:lib-graphql-playground:0.0.1"
 }
 
 repositories {
     mavenLocal()
     jcenter()
-    xp.enonicRepo()
+    xp.enonicRepo( 'dev' )
 }
