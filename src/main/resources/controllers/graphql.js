@@ -1,74 +1,14 @@
-var guillotineLib = require('/lib/guillotine');
-var graphqlPlaygroundLib = require('/lib/graphql-playground');
-var graphQlLib = require('/lib/graphql');
-var authLib = require('/lib/xp/auth');
+const guillotineLib = require('/lib/guillotine');
+const graphqlPlaygroundLib = require('/lib/graphql-playground');
 
 //──────────────────────────────────────────────────────────────────────────────
 // Constants
 //──────────────────────────────────────────────────────────────────────────────
-var CORS_HEADERS = {
+const CORS_HEADERS = {
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Origin': '*'
 };
-
-var SCHEMA = guillotineLib.createSchema();
-
-//──────────────────────────────────────────────────────────────────────────────
-// Authentication
-//──────────────────────────────────────────────────────────────────────────────
-function isAuthenticated() {
-    return authLib.hasRole('system.authenticated')
-}
-
-function canAccessAdminLogin() {
-    return authLib.hasRole('system.admin') || authLib.hasRole('system.admin.login')
-}
-
-//──────────────────────────────────────────────────────────────────────────────
-// Error handling
-//──────────────────────────────────────────────────────────────────────────────
-function createNotFoundError() {
-    return {
-        status: 404,
-        body: {
-            "errors": [
-                {
-                    "errorType": "404",
-                    "message": "Not found"
-                }
-            ]
-        }
-    }
-}
-
-function createUnauthorizedError() {
-    return {
-        status: 401,
-        body: {
-            "errors": [
-                {
-                    "errorType": "401",
-                    "message": "Unauthorized"
-                }
-            ]
-        }
-    }
-}
-
-function createForbiddenError() {
-    return {
-        status: 403,
-        body: {
-            "errors": [
-                {
-                    "errorType": "403",
-                    "message": "Forbidden"
-                }
-            ]
-        }
-    }
-}
 
 //──────────────────────────────────────────────────────────────────────────────
 // Methods
@@ -82,20 +22,15 @@ exports.options = function () {
 
 exports.get = function (req) {
     if (req.webSocket) {
-        if (!isAuthenticated()) {
-            return createUnauthorizedError();
-        }
-        if (!canAccessAdminLogin()) {
-            return createForbiddenError();
-        }
         return {
             webSocket: {
+                data: guillotineLib.createWebSocketData(req),
                 subProtocols: ['graphql-ws']
             }
         };
     }
 
-    var body = graphqlPlaygroundLib.render();
+    let body = graphqlPlaygroundLib.render();
     return {
         contentType: 'text/html; charset=utf-8',
         body: body
@@ -103,14 +38,18 @@ exports.get = function (req) {
 };
 
 exports.post = function (req) {
-    var body = JSON.parse(req.body);
+    let input = JSON.parse(req.body);
+
+    let params = {
+        query: input.query,
+        variables: input.variables
+    };
+
     return {
         contentType: 'application/json',
         headers: CORS_HEADERS,
-        body: JSON.stringify(graphQlLib.execute(SCHEMA, body.query, body.variables))
+        body: guillotineLib.execute(params)
     };
 };
 
-exports.webSocketEvent = guillotineLib.initWebSockets(SCHEMA);
-
-
+exports.webSocketEvent = guillotineLib.initWebSockets();
