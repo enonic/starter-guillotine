@@ -2,8 +2,6 @@ plugins {
     id 'com.enonic.xp.app' version '3.1.0'
 }
 
-apply plugin: "com.enonic.xp.app"
-
 app {
     name = "${appName}"
     displayName = "${appDisplayName}"
