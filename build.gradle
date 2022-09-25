@@ -13,7 +13,7 @@ app {
 dependencies {
     implementation "com.enonic.xp:portal-api:${xpVersion}"
     include "com.enonic.xp:lib-websocket:${xpVersion}"
-    include "com.enonic.lib:lib-guillotine:6.0.0"
+    include "com.enonic.lib:lib-guillotine:6.0.1"
     include "com.enonic.lib:lib-graphql-playground:0.0.1"
 }
 
