@@ -1,46 +1,19 @@
 # Headless CMS Starter for Enonic XP
 
-This starter kit provides a project foundation for building your own Headless CMS back-end using Enonic XP
+Use this starter to get an application with the Guillotine library embedded - out of the box.
 
-Documentation is available on https://developer.enonic.com/guildes/headless-cms-intro
+# Usage
 
-## Quick test
+Using Enonic CLI, run the following command to create a new app, using this starter as your template
 
-To build and deploy the starter as an app (without customizing it for your own needs):
+* `enonic project create -r starter-headless`
+* `enonic project deploy`
+* Using Content Studio, add this application to a site
+* Your custom Guillotine API will now be available at `http://localhost:8080/<path-to-your-site>/_graphql` 
+ 
+For more details on how to customize the API, visit https://developer.enonic.com/docs/guillotine/
 
-. Clone this Github project: `git clone ...`
-. Build the project from project directory: `./gradlew build`
-. Deploy the output file in build/lib/headless-1.0.0-SNAPSHOT.jar to your XP instance
+## Updating this starter
 
-## Compatibility
-
-
-| Version       | XP version |
-| ------------- | ---------- |
-| 4.1.0	        | 7.6.0 |
-| 4.0.0	        | 7.5.0 |
-| 3.0.0	        | 7.3.1 |
-| 1.0.0	        | 7.0.0 |
-| 0.9.0	        | 6.15.0-SNAPSHOT |
-
-## Changelog
-
-### 4.1.0
-
-* Upgraded to XP 7.6.0
-
-### 4.0.0
-
-* Upgraded to XP 7.5.0
-
-### 3.0.0
-
-* Cleaned to work in combination with HMDB
-
-### 1.0.0
-
-* Updated for XP 7
-
-### 0.9.0
-
-* Initial release
+* Clone this Github project: `git clone ...`
+* Build the project from project directory: `./gradlew build`
