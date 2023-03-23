@@ -9,7 +9,7 @@ Using Enonic CLI, run the following command to create a new app, using this star
 * `enonic project create -r starter-headless`
 * `enonic project deploy`
 * Using Content Studio, add this application to a site
-* Your custom Guillotine API will now be available at `http://localhost:8080/<path-to-your-site>/_graphql` 
+* Your custom Guillotine API will now be available at `http://localhost:8080/site/<repo>/<branch>/<path-to-your-site>/api` 
  
 For more details on how to customize the API, visit https://developer.enonic.com/docs/guillotine/
 
