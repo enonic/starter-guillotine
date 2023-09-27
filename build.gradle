@@ -17,6 +17,10 @@ dependencies {
     include "com.enonic.lib:lib-graphql-playground:0.0.2"
 }
 
+tasks.register('dev', Exec) {
+    commandLine './gradlew', 'deploy', '-t'
+}
+
 repositories {
     mavenLocal()
     mavenCentral()
