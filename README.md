@@ -1,3 +1,9 @@
+
+> [!NOTE]
+> **This starter is deprecated since the release of Guillotine 7**. 
+> You can now extend the Guillotine application's API directly instead.
+> Visit the [Guillotine documentation](https://developer.enonic.com/docs/guillotine) for more details
+
 # Headless CMS Starter for Enonic XP
 
 Use this starter to get an application with the Guillotine library embedded - out of the box.
